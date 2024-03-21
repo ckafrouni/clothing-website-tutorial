@@ -1,3 +1,4 @@
+{% import 'components/card.jinja' as card_macros %}
 {% extends "base.jinja" %}
 
 {% block header %}
@@ -12,17 +13,7 @@
 <div class="cards-container">
 
   {% for outfit in outfits %}
-  <div class="card">
-    <div class="card-banner">
-      <img src="{{ outfit.image }}">
-    </div>
-    <div class="card-body">
-      <h3 class="card-title">{{ outfit.title }}</h3>
-      <p class="card-text">{{ outfit.description }}</p>
-      <div class="card-price">{{ outfit.price }}</div>
-      <button type="button" class="card-button">add to cart</button>
-    </div>
-  </div>
+  {{ card_macros.card(outfit.image, outfit.title, outfit.description, outfit.price) }}
   {% endfor %}
 
 </div>

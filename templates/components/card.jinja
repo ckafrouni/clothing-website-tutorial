@@ -1,0 +1,12 @@
+{% macro card(banner_src, title, text, price) %}
+<div class="card">
+    <div class="card-banner"><img src="{{ banner_src }}"></div>
+
+    <div class=" card-body">
+        <h3 class="card-title">{{ title }}</h3>
+        <p class="card-text">{{ text }}</p>
+        <div class="card-price">{{ price }}</div>
+        <button type="button" class="card-button">add to cart</button>
+    </div>
+</div>
+{% endmacro %}
