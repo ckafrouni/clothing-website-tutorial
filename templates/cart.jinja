@@ -1,0 +1,11 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+<h1>Cart</h1>
+<p>Counter: <span id="counter">{{session['counter']}}</span></p>
+
+<button hx-post="/api/counter" hx-trigger="click" hx-target="#counter">
+    Click Me!
+</button>
+
+{% endblock %}
